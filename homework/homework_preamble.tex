@@ -1,0 +1,57 @@
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage[small]{titlesec}
+\usepackage[margin=1in]{geometry}
+
+% lecture number counter
+\newcounter{hwnum}
+\renewcommand{\thepage}{\thehwnum-\arabic{page}}
+\renewcommand{\thesection}{\thehwnum.\arabic{section}}
+\renewcommand{\theequation}{\thehwnum.\arabic{equation}}
+\renewcommand{\thefigure}{\thehwnum.\arabic{figure}}
+\renewcommand{\thetable}{\thehwnum.\arabic{table}}
+
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[hwnum]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+
+% macros for release date and due date
+% depends on the macros
+% \hwreleasedates
+% \hwduedates
+\pgfmathsetmacro{\releasedate}{\hwreleasedates[\hwnum-1]}
+\pgfmathsetmacro{\duedate}{\hwduedates[\hwnum-1]}
+
+% for creating headers
+% depends on the macros
+% \coursename
+% \semester
+\newcommand{\homeworkheader}{
+  \pagestyle{myheadings}
+  \thispagestyle{plain}
+  \newpage
+  \setcounter{hwnum}{\hwnum}
+  \setcounter{page}{1}
+  \noindent
+  \begin{center}
+    \framebox{
+      \vbox{\vspace{2mm}
+        \hbox to 6.28in { {\bf \coursename{}
+            \hfill \semester{}} }
+        \vspace{4mm}
+        \hbox to 6.28in { {\Large \hfill Homework \hwnum{} \hfill} }
+        \vspace{2mm}
+        \hbox to 6.28in { {\it Hand-out Date: \releasedate{} \hfill {\bf Due Date: \duedate{}} }}
+        \vspace{2mm}}
+    }
+  \end{center}
+  \markboth{Homework \hwnum{} -- Due \duedate{}}{Homework \hwnum{} -- Due \duedate{}}
+}

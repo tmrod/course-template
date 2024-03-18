@@ -1,0 +1,102 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+
+% \usepackage{times}
+
+\usepackage[plainpages=false]{hyperref}
+\usepackage{graphicx}
+
+\hypersetup{
+ colorlinks=true,
+ citecolor=Maroon,
+ linkcolor=blue,
+ urlcolor=blue
+}
+
+\usepackage{hyperref}
+
+\input{../course_config}
+
+\pgfmathsetmacro\firstexamdate{\examdates[0]}
+\pgfmathsetmacro\secondexamdate{\examdates[1]}
+\pgfmathsetmacro\thirdexamdate{\examdates[2]}
+
+\begin{document}
+
+\title{\coursename}
+\author{\semester}
+\date{}
+\maketitle
+
+\noindent {\bf Instructor:}
+\instructor{} (\href{mailto:\instructoremail{}}{\instructoremail{}}),
+office: \instructoroffice{},
+office hours: \officehours{}.
+
+\vspace{3mm}
+
+\noindent {\bf Time and location:} \classtime{}, \classlocation{}.
+
+\vspace{3mm}
+
+\noindent {\bf Short description:}
+
+\vspace{3mm}
+
+\noindent {\bf Prerequisites:}
+
+\vspace{3mm}
+
+\noindent {\bf Corequisites:}
+
+\vspace{3mm}
+
+\noindent {\bf Learning outcomes:} It is our objective that after taking this course students will be able to:
+
+\vspace{3mm}
+
+\noindent {\bf Grading policy:}
+
+\vspace{3mm}
+
+\noindent {\bf Homework:}
+
+\vspace{3mm}
+
+\noindent {\bf Exams:} There will be \numexams{} exams.
+These tests will last two hours and will begin promptly at \examtime{} on the following dates:
+\firstexamdate{}, \secondexamdate{}, and \thirdexamdate{}.
+Exam location to be announced.
+Please arrive at least ten minutes early.
+
+\vspace{3mm}
+
+\noindent {\bf Collaboration policy:}
+
+\vspace{3mm}
+
+\noindent {\bf Attendance policy:}
+
+\vspace{3mm}
+
+\noindent {\bf Course syllabus:}
+
+\vspace{3mm}
+
+\noindent {\bf Recommended texts:}
+
+\vspace{3mm}
+
+\noindent {\bf Disability support services:}
+
+\vspace{3mm}
+
+\noindent {\bf Mental health resources:}
+
+\vspace{3mm}
+
+\noindent {\bf Syllabus change policy:} This syllabus is a general guide for the course and is subject to change with advanced notice.
+
+\end{document}

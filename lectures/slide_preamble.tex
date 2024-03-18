@@ -1,0 +1,33 @@
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath,amsfonts,amssymb}
+
+% macro for getting class date
+% depends on the following macros:
+% \classdates
+\pgfmathsetmacro{\pgfclassdate}{\classdates[\lecnum-1]}
+\def\classdate{\pgfclassdate}
+
+% slides frontmatter
+% depends on the following macros:
+% \instructor
+% \coursename
+% \institution
+% \instructoremail
+% \coursewebsite
+% \semester
+\makeatletter
+\author[\instructor]{\begin{tabular}{c}
+  {\large \coursename}\vspace{2mm} \\
+  {\instructor}\vspace{2mm} \\
+  {\small \institution} \\
+  {\small \instructoremail} \\
+  {\small \texttt{\coursewebsite}}\\
+  \\
+  \\
+  \vspace{-0.5cm}
+\end{tabular}}
+\date[\semester]{\semester}
+\institute[\institution]{}
+\makeatother

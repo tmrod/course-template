@@ -1,0 +1,59 @@
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[small]{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{url}
+\usepackage[inline]{enumitem}
+\usepackage{tikz}
+
+% The following commands set up the lecnum (lecture number)
+% counter and make various numbering schemes work relative
+% to the lecture number.
+\newcounter{examnum}
+\renewcommand{\thepage}{\theexamnum-\arabic{page}}
+\renewcommand{\thesection}{\theexamnum.\arabic{section}}
+\renewcommand{\theequation}{\theexamnum.\arabic{equation}}
+\renewcommand{\thefigure}{\theexamnum.\arabic{figure}}
+\renewcommand{\thetable}{\theexamnum.\arabic{table}}
+
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[examnum]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+
+% macros for release date and due date
+% depends on the macros
+% \hwreleasedates
+% \hwduedates
+\pgfmathsetmacro{\examdate}{\examdates[\examnum-1]}
+
+% for creating headers
+% depends on the macros
+% \coursename
+% \semester
+\newcommand{\midtermheader}{
+  \pagestyle{myheadings}
+  \thispagestyle{plain}
+  \newpage
+  \setcounter{examnum}{\examnum}
+  \setcounter{page}{1}
+  \noindent
+  \begin{center}
+    \framebox{
+      \vbox{\vspace{2mm}
+        \hbox to 6.28in { {\bf \coursename{}
+            \hfill \semester{}} }
+        \vspace{4mm}
+        \hbox to 6.28in { {\Large \hfill Exam \examnum{} \hfill} }
+        \vspace{2mm}
+        \hbox to 6.28in { {\it  \hfill {\bf \examdate{}} }}
+        \vspace{2mm}}
+    }
+  \end{center}
+  \markboth{Exam \examnum{} -- \examdate{}}{Exam \examnum{} -- \examdate{}}
+}

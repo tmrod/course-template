@@ -1,0 +1,72 @@
+\usepackage{termcal}
+\usepackage{xcolor}
+\renewcommand{\calprintclass}{}
+\renewcommand{\calprintdate}{%
+	\ifnewmonth{{\monthname\ {\ordinaldate}}}%
+  \else {{\ordinaldate}}\fi
+}
+
+\definecolor{myreleasecolor}{RGB}{27, 158, 119}
+\definecolor{myduecolor}{RGB}{117, 112, 179}
+\definecolor{myexamcolor}{RGB}{217, 95, 2}
+
+\def\calendarspecs{%
+% appearance
+\setlength{\calboxdepth}{0.6cm}
+\setlength{\calwidth}{\linewidth}
+% description of week
+% for example, a MW class
+\calday[Monday]{\classday}
+\skipday
+\calday[Wednesday]{\classday}
+\skipday\skipday\skipday\skipday
+%
+% holidays
+% if there are any surprise skip days (e.g., hurricane)
+% you can include it as a holiday in the same way as below
+% the lecture schedule will shift accordingly
+\options{1/15/24}{\noclassday}
+\caltext{1/15/24}{No Class: MLK Day}
+\options{3/11/24}{\noclassday}
+\caltext{3/11/24}{No Class: Spring Break}
+\options{3/13/24}{\noclassday}
+\caltext{3/13/24}{No Class: Spring Break}
+\options{4/8/24}{\noclassday}
+\caltext{4/8/24}{No Class: Solar Eclipse}
+}
+
+\def\fulldatecalendar{%
+%
+% homework release
+\caltext{1/10/24}{\textcolor{myreleasecolor}{HW 1 Released}}
+\caltext{1/24/24}{\textcolor{myreleasecolor}{HW 2 Released}}
+\caltext{1/31/24}{\textcolor{myreleasecolor}{HW 3 Released}}
+\caltext{2/14/24}{\textcolor{myreleasecolor}{HW 4 Released}}
+\caltext{2/21/24}{\textcolor{myreleasecolor}{HW 5 Released}}
+\caltext{2/28/24}{\textcolor{myreleasecolor}{HW 6 Released}}
+\caltext{3/20/24}{\textcolor{myreleasecolor}{HW 7 Released}}
+\caltext{3/27/24}{\textcolor{myreleasecolor}{HW 8 Released}}
+\caltext{4/3/24}{\textcolor{myreleasecolor}{HW 9 Released}}
+\caltext{4/8/24}{\textcolor{myreleasecolor}{HW 10 Released}}
+%
+% homework due
+\caltext{1/17/24}{\textcolor{myduecolor}{HW 1 Due}}
+\caltext{1/31/24}{\textcolor{myduecolor}{HW 2 Due}}
+\caltext{2/7/24}{\textcolor{myduecolor}{HW 3 Due}}
+\caltext{2/21/24}{\textcolor{myduecolor}{HW 4 Due}}
+\caltext{2/28/24}{\textcolor{myduecolor}{HW 5 Due}}
+\caltext{3/18/24}{\textcolor{myduecolor}{HW 6 Due}}
+\caltext{3/27/24}{\textcolor{myduecolor}{HW 7 Due}}
+\caltext{4/3/24}{\textcolor{myduecolor}{HW 8 Due}}
+\caltext{4/15/24}{\textcolor{myduecolor}{HW 9 Due}}
+\caltext{4/15/24}{\textcolor{myduecolor}{HW 10 Due}}
+%
+% exams
+\caltext{2/12/24}{\textcolor{myexamcolor}{Exam 1}}
+\caltext{3/20/24}{\textcolor{myexamcolor}{Exam 2}}
+\caltext{4/17/24}{\textcolor{myexamcolor}{Exam 3}}
+%
+% 2024, solar eclipse "holiday" makeup day
+\caltext{2/7/24}{\textcolor{red}{\textbf{+8th: Make-up day}}}
+%
+}

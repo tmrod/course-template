@@ -1,0 +1,42 @@
+% need to have calendar_config included, first
+\begin{columns}[T]
+
+  \column{0.5\linewidth}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % UPDATE THE START DATE EACH SEMESTER %
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %\begin{calendar}{startdate}{number of weeks}
+  \begin{calendar}{1/8/24}{8}
+
+    % appearance
+    \calendarspecs
+    \fulldatecalendar
+
+    % you are here
+    \ifdefined\classdate
+      \caltext{\classdate}{\centering\colorbox{red!30}{You are here!}}
+    \fi
+
+  \end{calendar}
+
+  \column{0.5\linewidth}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % UPDATE THE FIRST DAY OF THE NINTH WEEK %
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %\begin{calendar}{startdate}{number of weeks}
+  \begin{calendar}{3/4/24}{7}
+
+    % appearance
+    \calendarspecs
+    \fulldatecalendar
+
+    % you are here
+    \ifdefined\classdate
+      \caltext{\classdate}{\centering\colorbox{red!30}{You are here!}}
+    \fi
+
+  \end{calendar}
+
+\end{columns}
